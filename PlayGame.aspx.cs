@@ -11,7 +11,13 @@ public partial class PlayGame : System.Web.UI.Page
     {
 
     }
+    protected void FV1_DataBound(object sender, EventArgs e)
+    {
+        int page = FV1.PageIndex + 1;
+        int total = FV1.PageCount;
 
+        ((Label)FV1.BottomPagerRow.Cells[0].FindControl("lblPageInfo")).Text = "Page " + page + " of " + total;
+    }
     //protected void lkbPrev_Click(object sender, EventArgs e)
     //{
     //    switch (((LinkButton)sender).ID)
@@ -34,12 +40,4 @@ public partial class PlayGame : System.Web.UI.Page
 
     //    GridView5.PageIndex = ddlPager.SelectedIndex;
     //}
-
-    protected void FV1_DataBound(object sender, EventArgs e)
-    {
-        int page = FV1.PageIndex + 1;
-        int total = FV1.PageCount;
-
-        ((Label)FV1.BottomPagerRow.Cells[0].FindControl("lblPageInfo")).Text = "Page " + page + " of " + total;
-    }
 }
