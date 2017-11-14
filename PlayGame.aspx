@@ -123,7 +123,7 @@
                                         <tr>
                                             <td></td>
                                             <td>
-                                                <asp:Label ID="Qz_TitleLabel" runat="server" Text='<%# Bind("Qz_Title") %>' />
+                                                <asp:Label ID="Qz_TitleLabel" runat="server" Text='<%# Eval("Qz_Title") %>' />
                                             </td>
                                         </tr>
                                         <tr>
@@ -133,13 +133,23 @@
                                         <tr>
                                             <td></td>
                                             <td>
-                                                <asp:CheckBox ID="Qz_Item1_CheckBox" runat="server" Text='<%# Eval("Qz_Item1") %>' />
+                                                <asp:CheckBox ID="Qz_Item1_CheckBox" runat="server" Text='<%# Eval("Qz_Item1") %>' OnCheckedChanged="Qz_Item1_CheckBox_CheckedChanged"/>
                                                 <br />
-                                                <asp:CheckBox ID="Qz_Item2_CheckBox" runat="server" Text='<%# Eval("Qz_Item2") %>' />
+                                                <asp:CheckBox ID="Qz_Item2_CheckBox" runat="server" Text='<%# Eval("Qz_Item2") %>' OnCheckedChanged="Qz_Item2_CheckBox_CheckedChanged"/>
                                                 <br />
-                                                <asp:CheckBox ID="Qz_Item3_CheckBox" runat="server" Text='<%# Eval("Qz_Item3") %>' />
+                                                <asp:CheckBox ID="Qz_Item3_CheckBox" runat="server" Text='<%# Eval("Qz_Item3") %>' OnCheckedChanged="Qz_Item3_CheckBox_CheckedChanged"/>
                                                 <br />
-                                                <asp:CheckBox ID="Qz_Item4_CheckBox" runat="server" Text='<%# Eval("Qz_Item4") %>' />
+                                                <asp:CheckBox ID="Qz_Item4_CheckBox" runat="server" Text='<%# Eval("Qz_Item4") %>' OnCheckedChanged="Qz_Item4_CheckBox_CheckedChanged"/>
+                                                <br />
+                                                <asp:Label ID="L1" runat="server" Visible="false" Text='<%# Eval("Qz_Solution") %>' >
+                                                </asp:Label>
+                                                <br />
+                                               <%-- <asp:CheckBoxList ID="CheckBoxList1" runat="server">
+                                                    <asp:ListItem Text='<%# Eval("Qz_Item1") %>'></asp:ListItem>
+                                                    <asp:ListItem Text='<%# Eval("Qz_Item2") %>'></asp:ListItem>
+                                                    <asp:ListItem Text='<%# Eval("Qz_Item3") %>'></asp:ListItem>
+                                                    <asp:ListItem Text='<%# Eval("Qz_Item4") %>'></asp:ListItem>
+                                                </asp:CheckBoxList>--%>
                                             </td>
                                         </tr>
                                     </table>
@@ -200,7 +210,7 @@
                                     </table>
                                 </PagerTemplate>
 
-
+                                <asp:Button runat="server" Text="Button" />
 
                             </asp:FormView>
 
